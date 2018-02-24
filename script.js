@@ -13,6 +13,9 @@
     function reduceTime(){
         time--
         displayTime(time)
+        if(time === 0) {
+            endGame()
+        }
     }
 
     function displayPoints(pointsParam){
@@ -45,6 +48,7 @@
             function(){
                 mole.remove()
                 addPoint()
+                flashBackground()
 
             }
         )
@@ -52,6 +56,23 @@
         document.querySelector('body').appendChild(mole)
 
         return mole
+    }
+
+    function endGame(){
+        clearInterval(gameIntervalId)
+        mole.remove()
+        alert('Game was ended! \ Your score was: ' + points + ' !')
+    }
+
+    function flashBackground(){
+        var body = document.querySelector('body')
+        body.style.backgroundColor = 'red'
+        setTimeout(
+            function(){
+                body.style.backgroundColor = 'green'
+            },
+            100
+        )
     }
 
     function init(){
