@@ -1,11 +1,11 @@
 // function declaration
-function hello(){
-console.log('Hello!')
-console.log('Hello!')
-console.log('Hello!')
+function hello(name, numberOfLogs){
+    for(var i = 0; i < numberOfLogs; i++) {
+        console.log('Hello ' + name + '!')
+    }
 }
 
 // function invocation (call)
-hello()
-hello()
-hello()
+hello('Mateusz', 1)
+hello('Ala', 2)
+hello('Ela', 3)
