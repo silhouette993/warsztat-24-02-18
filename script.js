@@ -1,11 +1,18 @@
-// function declaration
-function hello(name, numberOfLogs){
-    for(var i = 0; i < numberOfLogs; i++) {
-        console.log('Hello ' + name + '!')
-    }
-}
+(function (){
+var secondsCounter = 1
 
-// function invocation (call)
-hello('Mateusz', 1)
-hello('Ala', 2)
-hello('Ela', 3)
+var intervalId = setInterval (
+    function (){
+        console.log(secondsCounter++)
+    },
+    1000
+)
+
+setTimeout(
+    function(){
+        clearInterval(intervalId)
+    },
+    5000
+)
+
+})()
