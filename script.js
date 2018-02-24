@@ -2,6 +2,7 @@
     var points
     var time
     var mole
+    var dameIntervalId
 
     function addPoint(){
         points++
@@ -56,6 +57,15 @@
 
         displayPoints(points)
         displayTime(time)
+
+        gameIntervalId = setInterval(
+            function (){
+                mole.remove()
+                mole = makeMole ()
+            },
+
+            1000
+        )
     }
 
     init()
